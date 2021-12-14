@@ -1,0 +1,57 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Create account{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">Create an account</h1>
+
+                <p class="govuk-body">You'll need your username and password when you sign in online, so make them memorable.</p>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="username">Create username</label>
+                    <div id="username-hint" class="govuk-hint">
+                      Must contain at least 6 characters and no more than 30. Letters and numbers only.
+                    </div>
+                    <input class="govuk-input govuk-input--width-20" id="username" name="username" type="text" spellcheck="false" aria-describedby="username-hint">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="password">Create password</label>
+                    <div id="password-hint" class="govuk-hint">
+                      Must contain at least 8 characters with at least 1 capital letter, 1 lowercase letter and 1 number.
+                       Dp not use your surname, a common word like password or a sequence like 123.
+                    </div>
+                    <input class="govuk-input govuk-input--width-20" id="password" name="password" type="password" spellcheck="false" aria-describedby="password-hint">
+                </div>
+
+                <h2 class="govuk-heading-l">Security question</h2>
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="tea">
+                      What is your favourite cup of tea?
+                    </label>
+                    <select class="govuk-select  govuk-input--width-20" id="tea" name="tea">
+                        <option value="tetly">Tetley tea</option>
+                        <option value="yorkshire">Yorkshire tea</option>
+                        <option value="coffee">I prefer to drink coffee</option>
+                    </select>
+                  </div>
+
+
+                  <a href="/about-you?user={{ user }}" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Continue</a>
+                  <br>
+                  <a href="/start?user={{ user }}" class="govuk-link">Back</a>
+
+
+
+             </div>
+        </div>
+    </main>
+  </div>
+
+{% endblock %}
+

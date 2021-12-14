@@ -1,0 +1,23 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}2fa{% endblock %}
+
+{% block content %}
+
+<div class="flex-wrapper">
+    <h1 govuk-heading-l>User completes 2fa....</h1>
+</div>
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+<a href="/address?user={{ user }}&matches={{ matches }}" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Continue</a>
+</div>
+        </div>
+    </main>
+    </div>
+
+
+{% endblock %}
+

@@ -1,0 +1,94 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}About you{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <form action="/about-you?user={{ user }}" method="POST">
+                
+                    <h1 class="govuk-heading-xl">About you</h1>
+
+                    <p class="govuk-body">Enter your name as it appears on your passport or official documents</p>
+    
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="firstname">First name</label>
+                        <input class="govuk-input govuk-input--width-20" id="firstname" name="firstname" type="text" spellcheck="false" value="{{ userDetails.names[0] }}">
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="middlename">Middle names</label>
+                        <input class="govuk-input govuk-input--width-20" id="middlename" name="middlename" type="text" spellcheck="false" value="{{ userDetails.names[1] }}">
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="lastname">Last name</label>
+                        <input class="govuk-input govuk-input--width-20" id="lastname" name="lastname" type="text" spellcheck="false" value="{{ userDetails.names[2] }}">
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                              Date of birth
+                          </legend>
+                          <div id="dob-hint" class="govuk-hint">
+                            For example, 12 03 1986
+                          </div>
+                          <div class="govuk-date-input" id="passport-issued">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-day">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                            </div>
+                          </div>
+                      
+                        </fieldset>
+                      </div>
+
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="email">Email address</label>
+                        <div id="email-hint" class="govuk-hint">
+                          We will send you a code to confirm it is your email address. we may also email you about your claim.
+                          Make sure you can access this email address easily.
+                        </div>
+                        <input class="govuk-input govuk-input--width-20" id="email" name="email" type="text" spellcheck="false" aria-describedby="email-hint" value="{{ userDetails.email }}">
+                    </div>
+    
+    
+    
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                      </button>
+                </form>
+
+
+
+
+             </div>
+        </div>
+    </main>
+  </div>
+
+{% endblock %}
+

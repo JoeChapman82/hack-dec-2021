@@ -1,0 +1,37 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Start{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Universal Credit online</h1>
+
+      <p class=:govuk-body>Use this service to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>create a Universal Credit account</li>
+        <li>make a claim</li>
+        <li>join your partner's claim</li>
+      </ul>
+
+      <p class=:govuk-body>You must have an email address. You will also need access to your mobile phone (if you have one)</p>
+
+      <br>
+      <h2 class="govuk-heading-l">If you have made a claim to Universal Credit before</h2>
+
+      <p class="govuk-body"><a href="/sign-in">Sign in</a> to return to an existing claim, report a change or to make a new claim.</p>
+
+      <p class="govuk-body">If you have forgotten your sign in details you can reset them or ask for a reminder</p>
+
+      <a href="/other-benefits?user={{ user }}" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Start</a>
+
+      </div>
+        </div>
+    </main>
+  </div>
+
+{% endblock %}
+

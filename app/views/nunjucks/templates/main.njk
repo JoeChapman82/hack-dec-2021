@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>UC Hack 2021 - {% block pageTitle %}{% endblock %} &#127876;</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/images/favicon.ico" type="image/x-icon" />
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="/css/govuk-frontend-3.14.0.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <script type="text/javascript" src="/scripts/qrcode.js"></script>
+  </head>
+  <body class="govuk-template__body">
+    <script>
+        document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+    
+      </script>
+
+                {% include "nunjucks/partials/header.njk" %}
+                    {% block content %}{% endblock %}
+                {% include "nunjucks/partials/footer.njk" %}
+
+        {% block scripts %}{% endblock %}
+    <script type="text/javascript" src="/scripts/govuk-frontend-3.14.0.min.js"></script>
+    <script type="text/javascript" src="/scripts/main.js"></script>
+
+  </body>
+</html>

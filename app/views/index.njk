@@ -1,0 +1,14 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Pretty QR code{% endblock %}
+
+{% block content %}
+
+<div class="flex-wrapper">
+    <a id="qrlink" href="">
+        <div id="qrcode"></div>
+    </a>
+</div>
+
+{% endblock %}
+

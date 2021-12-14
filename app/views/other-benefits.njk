@@ -1,0 +1,66 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Other benefits{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">If you've already got other benefits</h1>
+
+                <p class="govuk-body govuk-!-font-weight-bold">You should check how applying for Universal Credit will affect your other benefits</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>
+                    <a class="govuk-link" href="#">Find out how tax credits and other benefits affect each other</a>
+                    </li>
+                  <li>
+                    <a class="govuk-link" href="#">Find an independent benefit calculator</a>
+                  </li>
+                </ul>
+
+                <p class="govuk-body govuk-!-font-weight-bold">Universal Credit replaces these benefits:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Child Tax Credit</li>
+                    <li>Working Tac Credit</li>
+                    <li>Housing Benefit</li>
+                    <li>Income Support</li>
+                    <li>Income based Jobseekers Allowance (JSA)</li>
+                    <li>Income related Employment and Support Allowance (ESA)</li>
+                  </ul>
+
+                  <p class="govuk-body">These claims will end if you or your partner make a claim to Universal Credit. Even if it's not approved</p>
+
+                  <div class="govuk-inset-text govuk-!-font-weight-bold">
+                    ! You understand that if you or your partner make a claim, any benefits you get now that are replaced by Universal Credit will stop.
+                     You will not be able to submit a new claim for the benefits that have stopped.
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste">
+                            I have read and understand.
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
+                  <a href="/create-account?user={{ user }}" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Continue</a>
+
+                  <br>
+                  <a href="/start?user={{ user }}" class="govuk-link">Back</a>
+
+
+
+             </div>
+        </div>
+    </main>
+  </div>
+
+{% endblock %}
+

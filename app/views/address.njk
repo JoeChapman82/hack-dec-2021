@@ -1,0 +1,50 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Address{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">Enter your address</h1>
+
+                {% if matches === "true" %}
+                    <p class="govuk-body">We have pre populated your address</p>
+                {% else %}
+                    <p class="govuk-body">We have not pre populated your address</p>
+                {% endif %}
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="address1">Address line 1</label>
+                    <input class="govuk-input govuk-input--width-20" id="address1" name="address1" type="text" spellcheck="false" value="{% if matches === 'true' %}{{ userDetails.address[0]}}{% endif %}">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="address2">Address line 2</label>
+                    <input class="govuk-input govuk-input--width-20" id="address2" name="address2" type="text" spellcheck="false" value="{% if matches === 'true' %}{{ userDetails.address[1]}}{% endif %}">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="city">City</label>
+                    <input class="govuk-input govuk-input--width-10" id="city" name="city" type="text" spellcheck="false" value="{% if matches === 'true' %}{{ userDetails.address[2]}}{% endif %}">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="postcode">Postcode</label>
+                    <input class="govuk-input govuk-input--width-5" id="postcode" name="postcode" type="text" spellcheck="false" value="{% if matches === 'true' %}{{ userDetails.address[3]}}{% endif %}">
+                </div>
+
+
+
+
+                  <a href="/about-you?user={{ user }}" role="button" draggable="false" class="govuk-button" data-module="govuk-button">End of app</a>
+
+             </div>
+        </div>
+    </main>
+  </div>
+
+{% endblock %}
+
